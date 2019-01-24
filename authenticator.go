@@ -14,6 +14,8 @@ import (
 	"net/http/cookiejar"
 	"strings"
 
+	"github.com/youmark/pkcs8"
+
 	// Authentication with certificates can break if this is not included even though no methods
 	// are called directly.
 	// TODO: See if this can be controlled with tags.
@@ -166,8 +168,14 @@ func (c *clientCertAuthenticator) Client() (*http.Client, error) {
 			return nil, errors.New("expecting a PEM block in encrypted private key file")
 		}
 
-		decBytes, decErr := x509.DecryptPEMBlock(pemBlock, []byte(c.Password))
+		pwBytes := []byte(c.Password)
+		decBytes, decErr := x509.DecryptPEMBlock(pemBlock, pwBytes)
 		if decErr != nil {
+			_, pkErr := pkcs8.ParsePKCS8PrivateKeyRSA(keyBytes, pwBytes)
+			if pkErr != nil {
+				return nil, pkErr
+			}
+
 			return nil, decErr
 		}
 

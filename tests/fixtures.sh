@@ -16,7 +16,7 @@ openssl req -new -key passwordless.key -out passwordless.csr -subj "/C=US/ST=Den
 openssl x509 -req -days 1825 -in passwordless.csr -CA ca.crt -CAkey ca.key -set_serial 01 -out passwordless.crt
 
 # Create a key with a password & generate a certificate from it
-openssl genrsa -des3 -passout pass:Pa55word -out password.key 2048
+openssl genrsa -aes256 -passout pass:Pa55word -out password.key 2048
 openssl req -new -passin pass:Pa55word -key password.key -out password.csr -subj "/C=US/ST=Denial/L=Springfield/O=Sofa/CN=password"
 openssl x509 -req -days 1825 -in password.csr -CA ca.crt -CAkey ca.key -set_serial 02 -out password.crt
 
