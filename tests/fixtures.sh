@@ -4,7 +4,7 @@ set -eu
 
 DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-mkdir "${DIR}/fixtures"
+mkdir -p "${DIR}/fixtures"
 pushd "${DIR}/fixtures"
 
 # Create the CA certificate
