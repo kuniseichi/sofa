@@ -16,8 +16,8 @@ type DatabaseMetadata struct {
 	DataSize           int    `json:"data_size"`
 	DiskSize           int    `json:"disk_size"`
 	DiskFormatVersion  int    `json:"disk_format_version"`
-	PurgeSeq           int    `json:"purge_seq"`
-	UpdateSeq          int    `json:"update_seq"`
+	PurgeSeq           string    `json:"purge_seq"`
+	UpdateSeq          string    `json:"update_seq"`
 	CommittedUpdateSeq int    `json:"committed_update_seq"`
 }
 
