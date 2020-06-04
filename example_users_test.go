@@ -5,7 +5,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/joelnb/sofa"
+	"github.com/kuniseichi/sofa"
 )
 
 func Example_createUser() {

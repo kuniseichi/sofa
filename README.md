@@ -4,7 +4,7 @@ Simply connect to CouchDB database servers using Go.
 
 ## Documentation
 
-View the [full documentation](https://pkg.go.dev/github.com/joelnb/sofa?tab=doc) which includes examples.
+View the [full documentation](https://pkg.go.dev/github.com/kuniseichi/sofa?tab=doc) which includes examples.
 
 ## Limitations
 

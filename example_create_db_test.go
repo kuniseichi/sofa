@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/joelnb/sofa"
+	"github.com/kuniseichi/sofa"
 )
 
 // ExampleCreateDatabase

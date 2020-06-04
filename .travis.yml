@@ -5,7 +5,7 @@ before_install:
   - docker run -d -p 127.0.0.1:5985:5984 couchdb:2
 go:
   - 1.10.x
-go_import_path: github.com/joelnb/sofa
+go_import_path: github.com/kuniseichi/sofa
 language: go
 script:
   - echo "Sleeping to allow the CouchDB server to fully startup"
