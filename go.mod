@@ -1,4 +1,4 @@
-module github.com/joelnb/sofa
+module github.com/kuniseichi/sofa
 
 require (
 	github.com/google/go-querystring v1.0.0
